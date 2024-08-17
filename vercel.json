@@ -1,6 +1,14 @@
 {   "version": 2, 
     "rewrites": [
             { 
+                "source": "/api/veterinarios",
+                "destination": "/api/veterinarios/login"
+            },
+            { 
+                "source": "/api/pacientes",
+                "destination": "/api/veterinarios/login"
+            },
+            { 
                 "source": "/api/veterinarios/login",
                 "missing": [
                     {
