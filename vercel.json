@@ -1,66 +1,62 @@
 {   "version": 2, 
     "rewrites": [
             { 
-                "source": "/api/pacientes",
-                "has": [
-                    {   
-                        "type": "header",
-                        "key": "Authorization",
-                        "value": "(.*)"
-                    }
-                ]
-            },
-            { 
-                "source": "/api/pacientes/:id",
-                "has": [
-                    {
-                        "type": "header",
-                        "key": "Authorization",
-                        "value": "(.*)"
-                    }
-                ]
-            },
-            { 
-                "source": "/api/veterinarios/perfil",
-                "has": [
-                    {
-                        "type": "header",
-                        "key": "Authorization",
-                        "value": "(.*)"
-                    }
-                ]
-            },
-            { 
-                "source": "/api/veterinarios/perfil/:id",
-                "has": [
-                    {
-                        "type": "header",
-                        "key": "Authorization",
-                        "value": "(.*)"
-                    }
-                ]
-            },
-            { 
-                "source": "/api/veterinarios/actualizar-password",
-                "has": [
-                    {
-                        "type": "header",
-                        "key": "Authorization",
-                        "value": "(.*)"
-                    }
-                ]
-            },
-            { 
                 "source": "/api/veterinarios/login",
-                "has": [
+                "missing": [
                     {
-                        "type": "header",
-                        "key": "Authorization",
-                        "value": "(.*)"
+                        "type": "cookie",
+                        "key": "auth_token"
                     }
                 ],
                 "destination": "/api/pacientes"
             }
+    ],
+    "headers": [
+        { 
+            "source": "/api/pacientes",
+            "headers": [
+                {   
+                    "key": "Authorization",
+                    "value": "(.*)"
+                }
+            ]
+        },
+        { 
+            "source": "/api/pacientes/:id",
+            "headers": [
+                {
+                    "key": "Authorization",
+                    "value": "(.*)"
+                }
+            ]
+        },
+        { 
+            "source": "/api/veterinarios/perfil",
+            "headers": [
+                {
+                    "key": "Authorization",
+                    "value": "(.*)"
+                }
+            ]
+        },
+        { 
+            "source": "/api/veterinarios/perfil/:id",
+            "headers": [
+                {
+                    "key": "Authorization",
+                    "value": "(.*)"
+                }
+            ]
+        },
+        { 
+            "source": "/api/veterinarios/actualizar-password",
+            "headers": [
+                {
+                    "key": "Authorization",
+                    "value": "(.*)"
+                }
+            ]
+        }
     ],
     "redirects": [
         {
