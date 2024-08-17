@@ -212,7 +212,7 @@ const actualizarPassword = async (req, res) =>{
             const erorr = new Error('Password Actual Incorrecto');
             return res.status(403).json({msg: erorr.message})
         }
-    }
+}
         
 export {
     registrar,
