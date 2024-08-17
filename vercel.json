@@ -2,8 +2,9 @@
     "rewrites": [
             { 
                 "source": "/api/pacientes",
-                "headers": [
-                    {
+                "has": [
+                    {   
+                        "type": "header",
                         "key": "Authorization",
                         "value": "(.*)"
                     }
@@ -11,8 +12,9 @@
             },
             { 
                 "source": "/api/pacientes/:id",
-                "headers": [
+                "has": [
                     {
+                        "type": "header",
                         "key": "Authorization",
                         "value": "(.*)"
                     }
@@ -20,8 +22,9 @@
             },
             { 
                 "source": "/api/veterinarios/perfil",
-                "headers": [
+                "has": [
                     {
+                        "type": "header",
                         "key": "Authorization",
                         "value": "(.*)"
                     }
@@ -29,8 +32,9 @@
             },
             { 
                 "source": "/api/veterinarios/perfil/:id",
-                "headers": [
+                "has": [
                     {
+                        "type": "header",
                         "key": "Authorization",
                         "value": "(.*)"
                     }
@@ -38,8 +42,9 @@
             },
             { 
                 "source": "/api/veterinarios/actualizar-password",
-                "headers": [
+                "has": [
                     {
+                        "type": "header",
                         "key": "Authorization",
                         "value": "(.*)"
                     }
@@ -47,8 +52,9 @@
             },
             { 
                 "source": "/api/veterinarios/login",
-                "headers": [
+                "has": [
                     {
+                        "type": "header",
                         "key": "Authorization",
                         "value": "(.*)"
                     }
