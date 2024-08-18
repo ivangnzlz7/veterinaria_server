@@ -3,7 +3,97 @@
     "rewrites": [
         { 
             "source": "/(.*)",
-            "destination": "/" 
+            "destination": "/api" 
         }
-    ] 
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/"
+        }
+    ],
+    "headers": [
+        { 
+            "source": "/api/pacientes",
+            "headers": [
+                {   
+                    "key": "Authorization",
+                    "value": "(.*)"
+                }
+            ]
+        },
+        { 
+            "source": "/api/pacientes/:id",
+            "headers": [
+                {
+                    "key": "Authorization",
+                    "value": "(.*)"
+                }
+            ]
+        },
+        { 
+            "source": "/api/veterinarios/perfil",
+            "headers": [
+                {
+                    "key": "Authorization",
+                    "value": "(.*)"
+                }
+            ]
+        },
+        { 
+            "source": "/api/veterinarios/perfil/:id",
+            "headers": [
+                {
+                    "key": "Authorization",
+                    "value": "(.*)"
+                }
+            ]
+        },
+        { 
+            "source": "/api/veterinarios/actualizar-password",
+            "headers": [
+                {
+                    "key": "Authorization",
+                    "value": "(.*)"
+                }
+            ]
+        }
+    ],
+    "redirects": [
+        {
+            "source": "/api/pacientes",
+            "statusCode": 403,
+            "destination": "/api/veterinarios/login"
+        },
+        {
+            "source": "/api/pacientes/:id",
+            "statusCode": 403,
+            "destination": "/api/veterinarios/login"
+        },
+        {
+            "source": "/api/veterinarios/perfil",
+            "statusCode": 403,
+            "destination": "/api/veterinarios/login"
+        },
+        {
+            "source": "/api/veterinarios/perfil/:id",
+            "statusCode": 403,
+            "destination": "/api/veterinarios/login"
+        },
+        {
+            "source": "/api/veterinarios/actualizar-password",
+            "statusCode": 403,
+            "destination": "/api/veterinarios/login"
+        },
+        {
+            "source": "/api/veterinarios/login",
+            "statusCode": 403,
+            "destination": "/api/veterinarios"
+        },
+        {
+            "source": "/api/veterinarios/login",
+            "statusCode": 404,
+            "destination": "/api/veterinarios"
+        }
+    ]
 }
