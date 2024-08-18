@@ -6,12 +6,6 @@
             "destination": "/api" 
         }
     ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/"
-        }
-    ],
     "headers": [
         { 
             "source": "/api/pacientes",
