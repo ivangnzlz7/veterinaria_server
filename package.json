@@ -5,8 +5,8 @@
   "description": "Proyectos pacientes",
   "main": "index.js",
   "scripts": {
-    "start": "node api/index.js",
-    "dev": "nodemon api/index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "author": "Javier ivan",
   "license": "ISC",
@@ -21,8 +21,5 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
-  },
-  "engines": {
-    "node": ">=19.x"
   }
 }
